@@ -1,0 +1,22 @@
+$sidebarBackground: #5a5c51;
+$linkColor: #bcd5d1;
+
+.sidebar {
+  background: $sidebarBackground;
+  height: 96vh;
+  overflow: hidden;
+  padding: 1rem;
+  width: 20vw;
+}
+
+.link {
+  color: $linkColor;
+  text-decoration: none;
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.listFilm {
+  margin: 1rem 0;
+}
