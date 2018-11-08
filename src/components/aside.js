@@ -7,15 +7,19 @@ export default ({ data }) => {
   return (
     <aside className={styles.sidebar}>
       <ul>
-        {films.map(({ node }, index) => (
-          <li className={styles.listFilm} key={index}>
-            <Link to={`/film/${node.episode_id}`} className={styles.link}>
-              {node.title}
-              <br />
-              {node.release_date}
-            </Link>
-          </li>
-        ))}
+        {// eslint-disable-next-line
+        films.map(({ node }, index) => {
+          if (node.title !== null)
+            return (
+              <li className={styles.listFilm} key={index}>
+                <Link to={`/film/${node.episode_id}`} className={styles.link}>
+                  {node.title}
+                  <br />
+                  {node.release_date}
+                </Link>
+              </li>
+            )
+        })}
       </ul>
     </aside>
   )
