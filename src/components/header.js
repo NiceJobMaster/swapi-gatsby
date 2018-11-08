@@ -5,9 +5,9 @@ import styles from '../css/header.module.scss'
 
 const Header = ({ siteTitle }) => (
   <div className={styles.content}>
-      <Link to="/">
-        <img src={logo} alt={siteTitle} className={styles.logo} />
-      </Link>
+    <Link to="/">
+      <img src={logo} alt={siteTitle} className={styles.logo} />
+    </Link>
   </div>
 )
 
