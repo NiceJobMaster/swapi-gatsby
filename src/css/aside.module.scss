@@ -20,3 +20,10 @@ $linkColor: #bcd5d1;
 .listFilm {
   margin: 1rem 0;
 }
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    width: 100%;
+    height: 100%;
+  }
+}
