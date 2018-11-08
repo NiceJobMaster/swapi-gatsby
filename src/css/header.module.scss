@@ -1,17 +1,13 @@
 $rootBackground: #1d2120;
-$titleColor: #fff;
-
-.root {
-  background: $rootBackground;
-}
 
 .content {
-  margin: 0 auto;
-  max-width: 960;
+  background: $rootBackground;
+  margin: auto;
   padding: 1.45rem 1.0875rem;
 }
 
-.title {
-  color: $titleColor;
-  text-decoration: none;
+.logo {
+  display: block;
+  margin: auto;
+  height: 5rem;
 }
