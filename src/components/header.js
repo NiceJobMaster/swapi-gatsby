@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from 'react-router-dom'
 import logo from '../images/logo.svg'
 import styles from '../css/header.module.scss'
 
