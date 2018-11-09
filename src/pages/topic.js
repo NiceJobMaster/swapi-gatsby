@@ -1,11 +1,13 @@
 import React from 'react'
 import BackButton from '../components/backButton'
 
-const Topic = props => {
-  const topicSelected = props.topicName
-  const films = props.data.allCommunityEducationClasses.edges
-  // eslint-disable-next-line
-  const objects = films.find(({ node }) => node.episode_id == props.episodeId)
+const Topic = ({ match, data }) => {
+  const topicSelected = match.params.topicName
+  const films = data.allCommunityEducationClasses.edges
+  const objects = films.find(
+    // eslint-disable-next-line
+    ({ node }) => node.episode_id == match.params.episodeId
+  )
   const list = objects.node[topicSelected]
   return <TopicSelected topic={topicSelected} list={list} />
 }
@@ -20,7 +22,7 @@ const TopicSelected = ({ topic, list }) => (
         </li>
       ))}
     </ul>
-    <BackButton where="../" />
+    <BackButton />
   </div>
 )
 

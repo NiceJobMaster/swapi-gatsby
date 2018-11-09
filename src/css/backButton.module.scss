@@ -1,8 +1,9 @@
-$buttonBackground: #ba9077;
-$buttonColor: #1d2120;
+$buttonBackground: #f7f7f7;
+$buttonColor: #636363;
+$buttonHoverColor: #c69cc8;
 
 .link {
-  background-color: $buttonBackground;
+  background: $buttonBackground;
   border-radius: 1rem;
   color: $buttonColor;
   cursor: pointer;
@@ -12,8 +13,11 @@ $buttonColor: #1d2120;
   transition-duration: 0.4s;
   text-decoration: none;
   width: 10rem;
+  &:hover {
+    background: $buttonHoverColor;
+  }
 }
 
 .buttonMargin {
-  margin-top: 2rem;
+  margin: 2rem 0;
 }

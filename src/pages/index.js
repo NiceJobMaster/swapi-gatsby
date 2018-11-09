@@ -1,25 +1,33 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Router } from '@reach/router'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Layout from '../components/layout'
 import Home from './home'
 import Film from './film'
 import Topic from './topic'
-import NotFoundPage from './404'
 import '../css/index.module.scss'
 
-const IndexPage = ({ data }) => (
-  <Layout dataFull={data}>
-    <main>
-      <Router>
-        <Home path="/" />
-        <Film path="film/:episodeId" data={data} />
-        <Topic path="film/:episodeId/:topicName" data={data} />
-        <NotFoundPage default />
-      </Router>
-    </main>
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+  return (
+    <Router>
+      <Layout dataFull={data}>
+        <main>
+          <Route exact path="/" component={Home} />
+          <Route
+            exact
+            path="/film/:episodeId"
+            render={({ match }) => <Film data={data} match={match} />}
+          />
+          <Route
+            exact
+            path="/film/:episodeId/:topicName"
+            render={({ match }) => <Topic data={data} match={match} />}
+          />
+        </main>
+      </Layout>
+    </Router>
+  )
+}
 
 export const query = graphql`
   query {

@@ -1,12 +1,18 @@
 import React from 'react'
-import { Link } from '@reach/router'
 import styles from '../css/backButton.module.scss'
+import createHistory from 'history/createBrowserHistory'
 
-const Back = ({ where }) => (
+const history = createHistory()
+const back = e => {
+  e.stopPropagation()
+  history.goBack()
+}
+
+const Back = () => (
   <div className={styles.buttonMargin}>
-    <Link to={where} className={styles.link}>
+    <button onClick={back} className={styles.link}>
       Back
-    </Link>
+    </button>
   </div>
 )
 

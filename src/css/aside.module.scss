@@ -1,12 +1,12 @@
-$sidebarBackground: #5a5c51;
-$linkColor: #bcd5d1;
+$sidebarBackground: #f7f7f7;
+$linkColor: #636363;
 
 .sidebar {
   background: $sidebarBackground;
-  height: 96vh;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
   overflow: hidden;
   padding: 1rem;
-  width: 20vw;
 }
 
 .link {
@@ -23,7 +23,13 @@ $linkColor: #bcd5d1;
 
 @media screen and (max-width: 900px) {
   .sidebar {
-    width: 100%;
-    height: 100%;
+    margin: 0;
+    border-top-right-radius: 0.25rem;
+    border-bottom-left-radius: 0;
+
+    ul {
+      list-style-position: inside;
+      padding: 0;
+    }
   }
 }

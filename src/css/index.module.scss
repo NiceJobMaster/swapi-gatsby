@@ -1,9 +1,33 @@
+$mainBackground: #fff;
+$mainColor: #636363;
+$aColor: #845d92;
+
 body {
   font-family: Helvetica, Arial, sans-serif;
   margin: 0;
 }
 
 main {
+  background: $mainBackground;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  color: $mainColor;
   flex: 1;
   padding: 1rem;
+
+  ul {
+    list-style-position: inside;
+  }
+
+  a {
+    color: $aColor;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0.25rem;
+  }
 }

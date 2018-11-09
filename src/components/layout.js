@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-
 import Header from './header'
 import Aside from '../components/aside'
 import styles from '../css/layout.module.scss'
@@ -29,10 +28,12 @@ const Layout = ({ children, dataFull }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div className={styles.root}>
-          <Aside data={dataFull} />
-          {children}
+        <div className={styles.all}>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <div className={styles.root}>
+            <Aside data={dataFull} />
+            {children}
+          </div>
         </div>
       </>
     )}

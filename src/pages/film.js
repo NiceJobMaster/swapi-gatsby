@@ -1,11 +1,13 @@
 import React from 'react'
-import { Link } from '@reach/router'
+import { Link } from 'react-router-dom'
 import BackButton from '../components/backButton'
 
-const Film = props => {
-  const films = props.data.allCommunityEducationClasses.edges
-  // eslint-disable-next-line
-  const film = films.find(({ node }) => node.episode_id == props.episodeId)
+const Film = ({ match, data }) => {
+  const films = data.allCommunityEducationClasses.edges
+  const film = films.find(
+    // eslint-disable-next-line
+    ({ node }) => node.episode_id == match.params.episodeId
+  )
   return <Content film={film} />
 }
 
@@ -18,17 +20,17 @@ const Content = ({ film }) => (
         <li>Producer: {film.node.producer}</li>
         <li>Release Date: {film.node.release_date}</li>
         <li>
-          <Link to="starships">Starships</Link>
+          <Link to={`${film.node.episode_id}/starships`}>Starships</Link>
         </li>
         <li>
-          <Link to="vehicles">Vehicles</Link>
+          <Link to={`${film.node.episode_id}/vehicles`}>Vehicles</Link>
         </li>
         <li>
-          <Link to="species">Species</Link>
+          <Link to={`${film.node.episode_id}/species`}>Species</Link>
         </li>
       </ul>
     </div>
-    <BackButton where="/" />
+    <BackButton />
   </div>
 )
 
