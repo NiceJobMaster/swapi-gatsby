@@ -3,7 +3,7 @@
 ## Based on
 
 - Gatsby
-- Reach Router
+- React
 
 ## To open
 
