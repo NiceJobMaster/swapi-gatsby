@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Layout from '../components/layout'
 import Home from './home'
 import Film from './film'
@@ -10,32 +10,30 @@ import '../css/index.module.scss'
 
 const IndexPage = ({ data }) => {
   return (
-    <Router>
-      <Layout dataFull={data}>
-        <main>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route
-              exact
-              path="/film/:episodeId"
-              render={({ match }) => <Film data={data} match={match} />}
-            />
-            <Route
-              exact
-              path="/film/:episodeId/:topicName"
-              render={({ match }) => <Topic data={data} match={match} />}
-            />
-            <Route path="*" component={NotFound} />
-          </Switch>
-        </main>
-      </Layout>
-    </Router>
+    <Layout dataFull={data}>
+      <main>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route
+            exact
+            path="/film/:episodeId"
+            render={({ match }) => <Film data={data} match={match} />}
+          />
+          <Route
+            exact
+            path="/film/:episodeId/:topicName"
+            render={({ match }) => <Topic data={data} match={match} />}
+          />
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </main>
+    </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    allCommunityEducationClasses {
+    allInternalPosts {
       edges {
         node {
           title

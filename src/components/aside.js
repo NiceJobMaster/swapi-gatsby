@@ -3,7 +3,7 @@ import styles from '../css/aside.module.scss'
 import { NavLink } from 'react-router-dom'
 
 export default ({ data }) => {
-  const films = data.allCommunityEducationClasses.edges
+  const films = data.allInternalPosts.edges
   return (
     <aside className={styles.sidebar}>
       <ul>

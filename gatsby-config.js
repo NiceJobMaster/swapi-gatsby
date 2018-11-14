@@ -25,10 +25,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-apiserver',
       options: {
-        typePrefix: 'community_education__',
+        typePrefix: 'internal__',
         url: `https://swapi.co/api/films`,
         method: 'get',
-        name: `classes`,
+        name: `posts`,
         entityLevel: `results`,
         auth: false,
       },

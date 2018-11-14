@@ -1,8 +1,13 @@
 import React from 'react'
 import styles from '../css/backButton.module.scss'
-import createHistory from 'history/createBrowserHistory'
 
-const history = createHistory()
+let history
+
+if (typeof document !== 'undefined') {
+  const createBrowserHistory = require('history/createBrowserHistory').default
+
+  history = createBrowserHistory()
+}
 const back = e => {
   e.stopPropagation()
   history.goBack()

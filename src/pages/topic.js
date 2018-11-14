@@ -1,12 +1,11 @@
 import React from 'react'
 import BackButton from '../components/backButton'
 
-const Topic = ({ match, data }) => {
-  const topicSelected = match.params.topicName
-  const films = data.allCommunityEducationClasses.edges
-  const objects = films.find(
+const Topic = props => {
+  const topicSelected = props.match.params.topicName
+  const objects = props.data.allInternalPosts.edges.find(
     // eslint-disable-next-line
-    ({ node }) => node.episode_id == match.params.episodeId
+    ({ node }) => node.episode_id == props.match.params.episodeId
   )
   const list = objects.node[topicSelected]
   return <TopicSelected topic={topicSelected} list={list} />

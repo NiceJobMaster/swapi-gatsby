@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import Aside from '../components/aside'
 import styles from '../css/layout.module.scss'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 const Layout = ({ children, dataFull }) => (
   <StaticQuery
@@ -28,13 +29,15 @@ const Layout = ({ children, dataFull }) => (
         >
           <html lang="en" />
         </Helmet>
-        <div className={styles.all}>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <div className={styles.root}>
-            <Aside data={dataFull} />
-            {children}
+        <Router>
+          <div className={styles.all}>
+            <Header siteTitle={data.site.siteMetadata.title} />
+            <div className={styles.root}>
+              <Aside data={dataFull} />
+              {children}
+            </div>
           </div>
-        </div>
+        </Router>
       </>
     )}
   />
