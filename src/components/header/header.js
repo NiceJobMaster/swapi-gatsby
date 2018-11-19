@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import logo from '../../images/logo.svg'
 import styles from './header.module.scss'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ data }) => (
     <div className={`animated zoomIn ${styles.content}`}>
-      <Link to="/">
-        <img src={logo} alt={siteTitle} className={styles.logo} />
+      <Link to={`${data.site.pathPrefix}`}>
+        <img src={logo} alt="Star Wars Logo" className={styles.logo} />
       </Link>
     </div>
 )

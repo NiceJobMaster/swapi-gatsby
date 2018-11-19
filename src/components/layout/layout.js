@@ -19,7 +19,7 @@ const Layout = ({ children, data }) => (
       </Helmet>
       <Router>
         <div>
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header data={data} />
             <div className={`animated zoomIn ${styles.root}`}>
               <Aside data={data} />
               {children}
