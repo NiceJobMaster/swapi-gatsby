@@ -1,0 +1,12 @@
+.margin {
+  text-align: center;
+  * {
+    margin: 3rem auto;
+  }
+  img {
+    display: block;
+    height: auto;
+    max-width: 400px;
+    width: 100%;
+  }
+}

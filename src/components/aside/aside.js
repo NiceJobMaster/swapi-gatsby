@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../css/aside.module.scss'
+import styles from './aside.module.scss'
 import { NavLink } from 'react-router-dom'
 
 export default ({ data }) => {
@@ -8,10 +8,10 @@ export default ({ data }) => {
     <aside className={styles.sidebar}>
       <ul>
         {// eslint-disable-next-line
-        films.map(({ node }, index) => {
+        films.map(({ node }) => {
           if (node.title !== null)
             return (
-              <li className={styles.listFilm} key={index}>
+              <li className={styles.listFilm} key={node.episode_id}>
                 <NavLink
                   to={`/film/${node.episode_id}`}
                   className={styles.link}

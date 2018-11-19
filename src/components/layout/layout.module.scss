@@ -1,11 +1,4 @@
-$allBackground: linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
 $rootShadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
-
-.all{
-  background: $allBackground;
-  height: 100%;
-  min-height: 100vh;
-}
 
 .root {
   box-shadow: $rootShadow;

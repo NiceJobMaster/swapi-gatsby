@@ -1,5 +1,5 @@
 import React from 'react'
-import BackButton from '../components/backButton'
+import BackButton from '../backbutton/backButton'
 
 const Topic = props => {
   const topicSelected = props.match.params.topicName
@@ -12,16 +12,16 @@ const Topic = props => {
 }
 
 const TopicSelected = ({ topic, list }) => (
-  <div>
-    <h1 style={{ textTransform: 'capitalize' }}>{topic}</h1>
-    <ul>
-      {list.map(url => (
-        <li key={url}>
-          <a href={url}>{url}</a>
-        </li>
-      ))}
-    </ul>
-    <BackButton />
+  <div key={topic} className="animated fadeIn">
+      <h1 style={{ textTransform: 'capitalize' }}>{topic}</h1>
+      <ul>
+        {list.map(url => (
+          <li key={url}>
+            <a href={url}>{url}</a>
+          </li>
+        ))}
+      </ul>
+      <BackButton />
   </div>
 )
 

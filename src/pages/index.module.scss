@@ -1,6 +1,13 @@
+$htmlBackground: linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
 $mainBackground: #fff;
 $mainColor: #636363;
 $aColor: #845d92;
+
+html {
+  background: $htmlBackground;
+  height: auto;
+  min-height: 100%;
+}
 
 body {
   font-family: Helvetica, Arial, sans-serif;
