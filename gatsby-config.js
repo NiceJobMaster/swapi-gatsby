@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/swapi-gatsby`,
   siteMetadata: {
     title: 'Star Wars',
   },
