@@ -5,7 +5,7 @@ import styles from './header.module.scss'
 
 const Header = ({ data }) => (
     <div className={`animated zoomIn ${styles.content}`}>
-      <Link to={`${data.site.pathPrefix}`}>
+      <Link to={`${data.site.pathPrefix}/`}>
         <img src={logo} alt="Star Wars Logo" className={styles.logo} />
       </Link>
     </div>
