@@ -1,17 +1,18 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import { Route, Switch } from 'react-router-dom'
-import Layout from '../layout/layout'
-import Home from '../home/home'
-import Film from '../film/film'
-import Topic from '../topic/topic'
-import NotFound from '../../pages/404'
+import React from "react";
+import { StaticQuery, graphql } from "gatsby";
+import { Route, Switch } from "react-router-dom";
+import Layout from "../layout/layout";
+import Home from "../home/home";
+import Film from "../film/film";
+import Topic from "../topic/topic";
+import NotFound from "../../pages/404";
 
 const IndexPage = () => (
   <StaticQuery
     query={graphql`
       query HomePageQuery {
         site {
+          pathPrefix
           siteMetadata {
             title
           }
@@ -36,15 +37,19 @@ const IndexPage = () => (
       <Layout data={data}>
         <main>
           <Switch>
-            <Route exact path="/" component={Home} />
             <Route
               exact
-              path="/film/:episodeId"
+              path={`(${data.site.pathPrefix}/|/)`}
+              component={Home}
+            />
+            <Route
+              exact
+              path={`${data.site.pathPrefix}/film/:episodeId`}
               render={({ match }) => <Film data={data} match={match} />}
             />
             <Route
               exact
-              path="/film/:episodeId/:topicName"
+              path={`${data.site.pathPrefix}/film/:episodeId/:topicName`}
               render={({ match }) => <Topic data={data} match={match} />}
             />
             <Route path="*" component={NotFound} />
@@ -53,6 +58,6 @@ const IndexPage = () => (
       </Layout>
     )}
   />
-)
+);
 
-export default IndexPage
+export default IndexPage;
