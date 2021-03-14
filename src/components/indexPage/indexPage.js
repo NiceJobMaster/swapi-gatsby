@@ -1,11 +1,11 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import { Route, Switch } from "react-router-dom";
-import Layout from "../layout/layout";
-import Home from "../home/home";
-import Film from "../film/film";
-import Topic from "../topic/topic";
-import NotFound from "../../pages/404";
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import { Route, Switch } from 'react-router-dom'
+import Layout from '../layout/layout'
+import Home from '../home/home'
+import Film from '../film/film'
+import Topic from '../topic/topic'
+import NotFound from '../../pages/404'
 
 const IndexPage = () => (
   <StaticQuery
@@ -58,6 +58,6 @@ const IndexPage = () => (
       </Layout>
     )}
   />
-);
+)
 
-export default IndexPage;
+export default IndexPage

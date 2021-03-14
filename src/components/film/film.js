@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import BackButton from "../backbutton/backButton";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import BackButton from '../backbutton/backButton'
 
 const Film = props => {
   const film =
@@ -8,9 +8,9 @@ const Film = props => {
     props.data.allInternalPosts.edges.find(
       // eslint-disable-next-line
       ({ node }) => node.episode_id == props.match.params.episodeId
-    );
-  return <Content props={props} film={film} />;
-};
+    )
+  return <Content props={props} film={film} />
+}
 
 const Content = ({ film, props }) => (
   <div key={film && film.node.episode_id} className="animated fadeIn">
@@ -48,6 +48,6 @@ const Content = ({ film, props }) => (
     </div>
     <BackButton />
   </div>
-);
+)
 
-export default Film;
+export default Film

@@ -5,7 +5,6 @@ import 'aos/dist/aos.css'
 import Spinner from '../components/spinner/spinner'
 import IndexPage from '../components/indexPage/indexPage'
 
-
 class Index extends Component {
   state = {
     loading: true,

@@ -3,7 +3,7 @@ import styles from './backButton.module.scss'
 
 const back = e => {
   e.stopPropagation()
-  window.history.back();
+  window.history.back()
 }
 const Back = () => (
   <div className={styles.buttonMargin}>
